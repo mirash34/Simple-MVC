@@ -1,0 +1,154 @@
+﻿@model List<study.Models.Information>
+@{
+    ViewBag.Title = "Home Page";
+}
+<script src="/Content/js/JavaScript1.js"></script>
+<div class="information">
+
+
+    <div>
+
+        @*<a id="new-element" href="/card/-1">new element</a>*@
+        <a id="new-element" href="javascript://">new element</a>
+
+        <br />
+
+        
+        <table>
+            @*<thead>
+                <tr>
+                    <th class="@(Model.Property == "Id" ? Model.Direction == "Asc" ? "dsc" : "asc":"")"><a href="/home/Index/?Property=Id&Direction=@(Model.Property == "Id" && Model.Direction == "Asc" ? "Dsc" : "Asc")">№</a></th>
+                    <th class="@(Model.Property == "Title" ? Model.Direction == "Asc" ? "dsc" : "asc":"")"><a href="/home/Index/?Property=Title&Direction=@(Model.Property=="Title" && Model.Direction=="Asc" ? "Dsc" : "Asc")">Title</th>
+                    <th class="@(Model.Property == "Description" ? Model.Direction == "Asc" ? "dsc" : "asc":"")"><a href="/home/Index/?Property=Description&Direction=@(Model.Property=="Description" && Model.Direction=="Asc" ? "Dsc" : "Asc")">Description</th>
+                    <th class="@(Model.Property == "PublicationDate" ? Model.Direction == "Asc" ? "dsc" : "asc" :"")"><a href="/home/Index/?Property=PublicationDate&Direction=@(Model.Property=="Date" && Model.Direction=="Asc" ? "Dsc" : "Asc")">Date</a></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>*@
+
+            <tr class="NewRow" rowid="-1">
+
+                <td colspan="6">
+                    <div class="form">
+                        <h2>Card</h2>
+
+                        <form>
+
+                            <div>
+                                <br />
+                                <label>Title</label>
+                                <br />
+                                <input class="Title" type="text" value="" />
+
+                            </div>
+                            <div>
+                                <br />
+                                <label>Description</label>
+                                <br />
+                                <textarea class="Description"></textarea>
+                            </div>
+                            <div>
+                                <br />
+                                <label>Date</label>
+                                <br />
+                                <input class="PublicationDate" type="text" value="" />
+
+                            </div>
+
+                            <div>
+                                <br />
+                                @*<img class="loader" src="~/Content/css/ajax-loader.gif" />*@
+                                <textarea class="loader"> Подождите </textarea>
+                                <input class="buttons" type="button" value="save">
+                            </div>
+
+
+                        </form>
+                    </div>
+                </td>
+
+            </tr>
+
+
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td class="current-Id">@Model[i].Id</td>
+                    <td class="current-Title">@Model[i].Title</td>
+                    <td class="current-Description">@Model[i].Description</td>
+                    <td class="current-PublicationDate">@Model[i].PublicationDate</td>
+                    @*<td><a href="/card/@Model.List[i].Id">Change this row</a></td>*@
+                    <td><a href="javascript://" class="this">Change this row</a></td>
+
+                    @*<td class="remove"><a href="/home/removeStr/?IdVar=@Model.List[i].Id">X</a></td>*@
+                    <td class="remove"><a href="javascript://">X</a></td>
+                </tr>
+                <tr class="change-row" rowid="@Model[i].Id">
+                
+                <td colspan="6">
+                    <div class="form">
+                        <h2>Card</h2>
+                       
+                        <form>
+
+                            <div>
+                                <br />
+                                <label>Title</label>
+                                <br />
+                                <input class="Title" type="text" value="@Model[i].Title" />
+
+                            </div>
+                            <div>
+                                <br />
+                                <label>Description</label>
+                                <br />
+                                <textarea class="Description">@Model[i].Description</textarea>
+                            </div>
+                            <div>
+                                <br />
+                                <label>Date</label>
+                                <br />
+                                <input class="PublicationDate" type="text" value="@Model[i].PublicationDate" />
+
+                            </div>
+
+                            <div>
+                                <br />
+                                @*<img class="loader" src="~/Content/css/ajax-loader.gif" />*@
+                                <textarea class="loader"> Подождите </textarea>
+                                <input class="buttons" type="button" value="save">
+                            </div>
+
+
+                        </form>
+                    </div>
+                </td>
+
+                </tr>
+            }
+          
+            <tfoot>
+                <tr class="last">
+                    <td colspan="3"></td>
+
+
+                    <td colspan="3" id="sum">Итого:@Model.Count()</td>
+
+
+
+                </tr>
+            </tfoot>
+
+
+
+
+        </table>
+        <br />
+        
+
+        @*<span>&hellip;</span>*@
+    </div>
+
+    
+</div>

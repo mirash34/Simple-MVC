@@ -1,0 +1,15 @@
+var btn = document.getElementById("myBtn");
+btn.onclick = function (event) {
+    var a = document.getElementById("some_div");
+    if (a.style.display == "none") {
+        a.style.display = "";
+        //btn.textContent="Показать форму"             
+        btn.innerHTML = '<a href="JavaScript://" id="myBtn" > Скрыть форму </a>';
+    }
+    else {
+        a.style.display = "none";       
+       
+        btn.innerHTML = '<a href="JavaScript://" id="myBtn" > Показать форму </a>';
+    }
+}
+$("myBtn").style.display

@@ -1,0 +1,36 @@
+﻿@model study.Models.Information
+@{
+    ViewBag.Title = "Card";
+    
+}
+<div class="form">
+    <h2>Card</h2>
+    @using (Html.BeginForm())
+    {
+        <div>
+            <br />
+            <label>Title</label>
+            <br />
+            @Html.TextBoxFor(x => x.Title)
+
+        </div>
+        <div>
+            <br />
+            <label>Description</label>
+            <br />
+            @Html.TextAreaFor(x => x.Description)
+        </div>
+        <div>
+            <br />
+            <label>Date</label>
+            <br />
+            @Html.TextBoxFor(x => x.PublicationDate)
+
+        </div>
+        <div>
+            <br />
+            <input type="submit" value="save">
+        </div>
+
+    }
+</div>

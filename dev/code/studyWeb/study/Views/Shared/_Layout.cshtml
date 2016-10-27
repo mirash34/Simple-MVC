@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Content/css/reset.css" />
+    <link rel="stylesheet" href="/Content/css/main.css" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Content/js/app.js"></script>
+    <title>@ViewBag.Title – тренировочное приложение ASP.NET MVC</title>
+
+</head>
+<body>
+
+    <div class="all">
+        <div class="wrapper">
+            <div class="header"> </div>
+            <div class="content">
+                <div class="banner"> Блок1 </div>
+                <div class="right">
+                    <div class="menu">Блок2</div>
+                    <div class="menu">Блок3</div>
+                    <div class="menu">Блок4</div>
+                    <div class="menu last-point-menu">
+                        Блок5
+                        <ul class="submenu">
+                            <li><a>Пункт1</a></li>
+                            <li><a>Пункт2</a></li>
+                            <li><a>Пункт3</a></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="static-information">Блок6</div>
+                @RenderBody()
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="footer"><p>Footer</p></div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+<body>
+
